@@ -22,7 +22,7 @@ class Training:
 
     LEN_STEP: float = 0.65
     M_IN_KM: int = 1000
-    MIN_IN_H = 60  # тут
+    MIN_IN_H = 60
 
     def __init__(self,
                  action: int,
@@ -67,7 +67,7 @@ class Running(Training):
                  * self.get_mean_speed()
                  + self.CALORIES_MEAN_SPEED_SHIFT)
                 * self.weight / self.M_IN_KM
-                * self.duration * self.MIN_IN_H)  # тут
+                * self.duration * self.MIN_IN_H)
 
 
 class SportsWalking(Training):
