@@ -1,4 +1,4 @@
-from typing import Type
+from typing import Type, List, Dict
 from dataclasses import dataclass, asdict
 
 
@@ -118,10 +118,10 @@ class Swimming(Training):
                 * self.weight * self.duration)
 
 
-def read_package(workout_type: str, data: list[float]) -> Training:
+def read_package(workout_type: str, data: List[float]) -> Training:
     """Прочитать данные полученные от датчиков."""
 
-    training_type: dict[str, Type[Training]] = {
+    training_type: Dict[str, Type[Training]] = {
         'SWM': Swimming,
         'RUN': Running,
         'WLK': SportsWalking,
