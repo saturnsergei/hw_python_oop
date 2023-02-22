@@ -26,7 +26,7 @@ class Training:
 
     LEN_STEP: float = 0.65
     M_IN_KM: int = 1000
-    MIN_IN_H: int = 60
+    MIN_IN_H: float = 60
 
     def __init__(self,
                  action: int,
@@ -45,11 +45,11 @@ class Training:
 
     def get_spent_calories(self) -> float:
         """Получить количество затраченных калорий."""
-        raise NotImplementedError
+        raise NotImplementedError('Метод get_spent_calories не определен')
 
     def show_training_info(self) -> InfoMessage:
         """Вернуть информационное сообщение о выполненной тренировке."""
-        return InfoMessage(str(type(self).__name__), self.duration,
+        return InfoMessage((type(self).__name__), self.duration,
                            self.get_distance(),
                            self.get_mean_speed(),
                            self.get_spent_calories())
